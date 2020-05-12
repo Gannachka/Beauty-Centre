@@ -5,29 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:beauty_center"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DockPanel Margin="100, 60, 100,60" >
-            <Border CornerRadius="6 "
-                    BorderBrush="Aquamarine"
-                    Background="LightCyan"
-                    BorderThickness="2"
-                    Padding="4">
-        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" >
+        Title="MainWindow" Height="370" Width="265.6"  Background="#62b6b5" ResizeMode="CanResizeWithGrip">
+    <Grid Margin="0,0,0.2,8.6" >
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Height="243"  >
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" DataContext="{Binding SelectedUserAuthentication}">
-                <Label HorizontalAlignment="Center">Login/ E-mail</Label>
-                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <Label HorizontalAlignment="Center">Password</Label>
-                <PasswordBox x:Name="AuthenticationPassBox"></PasswordBox> 
+                <Label HorizontalAlignment="Center" Content="Login/ E-mail"/>
+                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label HorizontalAlignment="Center" Content="Password"/>
+                <PasswordBox x:Name="AuthenticationPassBox"/>
             </StackPanel>
-            <StackPanel Margin="0,5,0,0" Width="110" Orientation="Vertical">
-                        <Button Content="Вход" Command="{Binding Enter}" CommandParameter="{Binding SelectedUserAuthentication}"/>
-                <Button  Content="Регистрация" Command="{Binding Registration}" Margin="0,5,0,0"/>
+            <StackPanel  Width="110"  Height="108">
+
+                <Button Content="Вход"  Command="{Binding Enter}" CommandParameter="{Binding SelectedUserAuthentication}" Height="31" Margin="0,30,0,10"/>
+                <Button  Content="Регистрация" Command="{Binding Registration}" Height="37" HorizontalAlignment="Left" Width="110"  />
             </StackPanel>
         </StackPanel>
-            </Border>
-        </DockPanel>
-        <!--<Button Content="hello World" Grid.Column="1" Grid.Row="1"/>-->
+
+
 
     </Grid>
 </Window>

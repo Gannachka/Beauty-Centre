@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace beauty_center
 {
-    class User
+   partial class User
     {
     }
 }

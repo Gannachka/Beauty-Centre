@@ -14,6 +14,21 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,11 +72,16 @@
     </ApplicationDefinition>
     <Compile Include="Authentication\UserAuthentication.cs" />
     <Compile Include="Authentication\UserAuthenticationViewModel.cs" />
+    <Compile Include="Enter\Enter.cs" />
+    <Compile Include="Enter\EnterVM.cs" />
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Registration\User.cs" />
     <Compile Include="Registration\UserViewModel.cs" />
+    <Compile Include="UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +96,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +132,46 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SqlConnections\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\fon_ImgID1.png" />
+    <Resource Include="Images\EHJKJU.png" />
+    <Resource Include="Images\fon.png" />
+    <Resource Include="Images\аллергия.png" />
+    <Resource Include="Images\ассаж.png" />
+    <Resource Include="Images\гастроэнтеролог.png" />
+    <Resource Include="Images\глазик.png" />
+    <Resource Include="Images\дерматолог.png" />
+    <Resource Include="Images\желудок.png" />
+    <Resource Include="Images\зубик.png" />
+    <Resource Include="Images\косметология.png" />
+    <Resource Include="Images\лор.png" />
+    <Resource Include="Images\онкология.png" />
+    <Resource Include="Images\ортопед.png" />
+    <Resource Include="Images\ребёнок.png" />
+    <Resource Include="Images\ревматолог.png" />
+    <Resource Include="Images\сердце.png" />
+    <Resource Include="Images\ТЕРПИЯ.png" />
+    <Resource Include="Images\УЗИ.png" />
+    <Resource Include="Images\хирургя.png" />
+    <Resource Include="Images\эндокринологияэ.png" />
+    <Resource Include="Images\эндоскопия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\unnamed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
