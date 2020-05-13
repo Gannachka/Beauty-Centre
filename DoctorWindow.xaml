@@ -53,10 +53,9 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <Label Content="Ф.И.О" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Label Content="пол" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="4" />
+                <Label Content="специаизация" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="4" />
                 <Label Content="дата рождения" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Button Content="Редактировать" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Button Content="Выход" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="4" />
+                 <Button Content="Выход" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="4" />
 
             </Grid>
 
@@ -102,21 +101,24 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="История приёмов" Grid.Column="5 " Grid.ColumnSpan="6" FontFamily="Gabriola" FontSize="35"  Grid.RowSpan="3" Foreground="#207676" Background="White" VerticalAlignment="Bottom" FontWeight="ExtraBold" FontStretch="UltraCondensed" />
+                    <Label Content="Пациенты" Grid.Column="5 " Grid.ColumnSpan="6" FontFamily="Gabriola" FontSize="35"  Grid.RowSpan="3" Foreground="#207676" Background="White" VerticalAlignment="Bottom" FontWeight="ExtraBold" FontStretch="UltraCondensed" />
                     <ListView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="12" Background="WhiteSmoke" >
                         <ListView.View>
                             <GridView AllowsColumnReorder="True">
                                 <GridViewColumn Header="Дата приёма"/>
                                 <GridViewColumn Header="Время приёма"/>
 
-                                <GridViewColumn Header="Ф.И.О врача"/>
-                                <GridViewColumn Header="Диагноз"/>
-                                <GridViewColumn Header="Ф.И.О врача"/>
-
+                                <GridViewColumn Header="Ф.И.О пациента"/>
+                          
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Content="Подробнее" Grid.Column="5" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                    <Button Content="Подробнее" Grid.Column="2" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <Button Content="Приём" Grid.Column="8" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
@@ -124,7 +126,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Записаться на приём" Background="#e7fdfd" Width="100" Margin="0,0,0,-29" >
+            <TabItem Header="Записать на приём" Background="#e7fdfd" Width="100" Margin="0,0,0,-29" >
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0,26,-0.4,0" >
                     <Grid>
                         <Grid.RowDefinitions>
@@ -179,13 +181,13 @@
                                 <ComboBoxItem x:Name="normal" Content="Средний" FontSize="15"/>
                                 <ComboBoxItem x:Name="high" Content="Высокий" FontSize="15"/>
                             </ComboBox>
-                               
-                               
+
+
                             <Label HorizontalAlignment="Center" RenderTransformOrigin="0.482,1.006">Дата</Label>
                             <DatePicker x:Name="calendarStart" SelectedDate="04/21/2020"  DisplayDateStart="04/21/2020" DisplayDateEnd="01/01/2030" Height="27"  FontSize="15"  Margin="0,10,-0.4,10" Background="Ivory"/>
                             <Label HorizontalAlignment="Center">Время</Label>
                         </StackPanel>
-                        <Button Content="Записаться" Grid.Column="5" Grid.Row="13" Grid.RowSpan="3" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                        <Button Content="Записать" Grid.Column="5" Grid.Row="13" Grid.RowSpan="3" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
                             <Button.Effect>
                                 <DropShadowEffect/>
                             </Button.Effect>

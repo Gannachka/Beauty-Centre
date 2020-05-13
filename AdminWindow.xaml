@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:beauty_center"
         mc:Ignorable="d"
-        Title="User"  Height="570" Width="800" Closing="Window_Closing" ResizeMode="NoResize" >
+        Title="AdminWindow"  Height="570" Width="800" Closing="Window_Closing" ResizeMode="NoResize" >
     <Window.Background >
 
         <ImageBrush  ImageSource="Images/fon_ImgID1.png"/>
@@ -52,11 +52,7 @@
                         <ImageBrush ImageSource="Images/unnamed.png" Stretch="UniformToFill"/>
                     </Ellipse.Fill>
                 </Ellipse>
-                <Label Content="Ф.И.О" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Label Content="пол" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Label Content="дата рождения" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Button Content="Редактировать" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="4" />
-                <Button Content="Выход" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="4" />
+                 <Button Content="Выход" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="4" />
 
             </Grid>
 
@@ -102,21 +98,25 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="История приёмов" Grid.Column="5 " Grid.ColumnSpan="6" FontFamily="Gabriola" FontSize="35"  Grid.RowSpan="3" Foreground="#207676" Background="White" VerticalAlignment="Bottom" FontWeight="ExtraBold" FontStretch="UltraCondensed" />
+                    <Label Content="Пациенты" Grid.Column="5 " Grid.ColumnSpan="6" FontFamily="Gabriola" FontSize="35"  Grid.RowSpan="3" Foreground="#207676" Background="White" VerticalAlignment="Bottom" FontWeight="ExtraBold" FontStretch="UltraCondensed" />
                     <ListView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="12" Background="WhiteSmoke" >
                         <ListView.View>
                             <GridView AllowsColumnReorder="True">
-                                <GridViewColumn Header="Дата приёма"/>
-                                <GridViewColumn Header="Время приёма"/>
-
-                                <GridViewColumn Header="Ф.И.О врача"/>
-                                <GridViewColumn Header="Диагноз"/>
-                                <GridViewColumn Header="Ф.И.О врача"/>
+                                <GridViewColumn Header="день рождения"/>
+                                <GridViewColumn Header="пол"/>
+                                <GridViewColumn Header="телефон"/>
+                                <GridViewColumn Header="эл.почта"/>
+                                <GridViewColumn Header="Ф.И.О пациента"/>
 
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Content="Подробнее" Grid.Column="5" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                    <Button Content="Удалить" Grid.Column="2" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <Button Content="Редактировать" Grid.Column="8" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
@@ -124,7 +124,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Записаться на приём" Background="#e7fdfd" Width="100" Margin="0,0,0,-29" >
+            <TabItem Header="Записать на приём" Background="#e7fdfd" Width="100" Margin="0,0,0,-29" >
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0,26,-0.4,0" >
                     <Grid>
                         <Grid.RowDefinitions>
@@ -164,36 +164,33 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan=" 12" Grid.RowSpan="11">
-                            <Label HorizontalAlignment="Center">Направление</Label>
-                            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                            <Label HorizontalAlignment="Center">Выберете врача</Label>
-                            <ComboBox x:Name="priority" Margin="0,0,-0.4,0">
-                                <ComboBox.Background>
-                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                                        <GradientStop Color="Ivory" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </ComboBox.Background>
-                                <ComboBoxItem x:Name="low" Content="Низкий" FontSize="15" />
-                                <ComboBoxItem x:Name="normal" Content="Средний" FontSize="15"/>
-                                <ComboBoxItem x:Name="high" Content="Высокий" FontSize="15"/>
-                            </ComboBox>
-                               
-                               
-                            <Label HorizontalAlignment="Center" RenderTransformOrigin="0.482,1.006">Дата</Label>
-                            <DatePicker x:Name="calendarStart" SelectedDate="04/21/2020"  DisplayDateStart="04/21/2020" DisplayDateEnd="01/01/2030" Height="27"  FontSize="15"  Margin="0,10,-0.4,10" Background="Ivory"/>
-                            <Label HorizontalAlignment="Center">Время</Label>
-                        </StackPanel>
-                        <Button Content="Записаться" Grid.Column="5" Grid.Row="13" Grid.RowSpan="3" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                        <Label Content="Пациенты" Grid.Column="5 " Grid.ColumnSpan="6" FontFamily="Gabriola" FontSize="35"  Grid.RowSpan="3" Foreground="#207676" Background="White" VerticalAlignment="Bottom" FontWeight="ExtraBold" FontStretch="UltraCondensed" />
+                        <ListView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="12" Background="WhiteSmoke" >
+                            <ListView.View>
+                                <GridView AllowsColumnReorder="True">
+                                    <GridViewColumn Header="кабинет"/>
+                                    <GridViewColumn Header="специализация"/>
+                                    <GridViewColumn Header="стаж работы"/>
+                                    <GridViewColumn Header="Ф.И.О врача"/>
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <Button Content="Удалить" Grid.Column="2" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                        <Button Content="Редактировать" Grid.Column="8" Grid.Row="16" Background="WhiteSmoke" Grid.ColumnSpan="3" BorderBrush="#FFBF89" BorderThickness="3">
                             <Button.Effect>
                                 <DropShadowEffect/>
                             </Button.Effect>
                         </Button>
                     </Grid>
+   
                 </ScrollViewer>
             </TabItem>
         </TabControl>
     </Grid>
 
-</Window>
+    </Window>
